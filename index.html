@@ -1,0 +1,141 @@
+<!--
+ Minebox Private Project
+ Copyright (c) 2025 LupusArctos4 
+ SPDX-License-Identifier: MIT
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minebox Craft - MBC</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 20px;
+    }
+    /* Container global en deux colonnes */
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+    /* Colonne de gauche : multiplicateur */
+    .left-column {
+      width: 150px;
+    }
+    .left-column label {
+      font-weight: bold;
+    }
+    .left-column input {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    /* Colonne de droite : Recherche, sélection et affichage */
+    .right-column {
+      flex: 1;
+    }
+    .item { 
+      border: 1px solid #ccc; 
+      padding: 20px; 
+      margin-top: 20px;
+    }
+    img { 
+      max-width: 200px; 
+      display: block;
+      margin-bottom: 10px;
+    }
+    /* Structure de l'ingrédient en deux colonnes */
+    .ingredient {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .ingredient-quantity {
+      width: 150px; /* largeur fixe pour la quantité */
+      display: inline-block;
+      text-align: right; /* alignement à droite */
+      margin-right: 10px; /* espace entre la quantité et l'image */
+      font-weight: bold;
+    }
+    .ingredient-details {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ingredient-details img {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+    }
+    .ingredient-details button {
+      padding: 2px 6px;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+    /* Style pour la liste des sous-recettes */
+    .sub-recipe {
+      margin-top: 5px;
+      margin-left: 20px;
+      list-style-type: disc;
+    }
+    /* Style pour la zone de recherche */
+    #item-search {
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 1em;
+      width: 300px;
+    }
+    .url-example {
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Choisissez un objet à afficher</h1>
+  
+  <!-- Bouton pour étendre/rétracter les recettes hors FARMER -->
+  <button id="expand-all-btn">Étendre toutes les recettes (hors FARMER)</button>
+
+  <!-- Bouton pour étendre/rétracter les recettes FARMER uniquement -->
+  <button id="expand-all-farmer-btn">Étendre toutes les recettes FARMER uniquement</button>
+
+  <!-- Affichage de l'exemple d'URL en brut -->
+  <p class="url-example">
+    Format de l'URL : /index.html?id=itemId&amp;multiplier=10&amp;expandAll=false&amp;expandAllFarmer=false&amp;showResources=false
+  </p>
+
+  <div class="container">
+    <!-- Colonne de gauche : Multiplicateur -->
+    <div class="left-column">
+      <label for="multiplier">Multiplicateur</label>
+      <input type="number" id="multiplier" value="1" min="1" step="any">
+    </div>
+
+    <!-- Colonne de droite : Recherche, sélection et affichage -->
+    <div class="right-column">
+      <input type="text" id="item-search" placeholder="Rechercher un item...">
+      <br>
+      <select id="item-select">
+        <option value="">-- Sélectionnez un objet --</option>
+      </select>
+
+      <div id="item-container" class="item">
+        <!-- L'affichage de l'objet sélectionné sera inséré ici -->
+      </div>
+
+      <!-- Récapitulatif des ressources -->
+      <button id="toggle-resources-btn">Afficher le récapitulatif des ressources</button>
+      <div id="resources-box" style="display:none; border: 1px solid #ccc; padding: 20px; margin-top: 20px;">
+        <!-- Les ressources seront affichées ici en deux colonnes -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

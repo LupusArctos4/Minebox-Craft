@@ -72,6 +72,6 @@ Ce projet est sous licence [MIT](LICENSE).
 
 ## Informations complémentaires
 
-- Ce projet a été réalisé avec l'aide de l'IA o3-mini d'Open IA pour ce qui est du code.
+- Ce projet a été réalisé avec l'aide de l'IA o3-mini d'Open IA pour ce qui est du code et du README.
 - Le fichier `items.json` est une copie en date du 14 septembre 2025 du fichier présent à l'url suivant : [https://cdn2.minebox.co/data/items.json](https://cdn2.minebox.co/data/items.json).
 - Les images présentes viennent de pack de texture diverse ou d'Internet hormis l'`enchanted_sweet_berries.png` qui est une création personnelle d'après le modèle de base.

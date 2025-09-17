@@ -21,6 +21,10 @@ Minebox Craft est une application web interactive qui permet d'explorer des obje
 - **Contrôle via l'URL**  
   Les paramètres comme l'ID de l'item, le multiplicateur, l'état d'expansion des recettes, ou l'affichage du récapitulatif sont gérés dans l'URL, facilitant le partage et la synchronisation de l'interface.
 
+## Exemple du site
+
+![Exemple_MBC](Exemple_MBC.png)
+
 ## Installation
 
 1. **Cloner le dépôt**  
